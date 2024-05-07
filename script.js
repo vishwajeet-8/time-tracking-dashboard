@@ -3,14 +3,11 @@ const daily = document.querySelector(".daily");
 const weekly = document.querySelector(".weekly");
 const monthly = document.querySelector(".monthly");
 
-const heroBody = document.querySelector(".hero-body");
-console.log(heroBody.children);
-
 function handleDailyClick() {
+  daily.style.color = "white";
   fetch("./data.json")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data[0]);
       return (timeTrack.innerHTML = `<div>
       <div class="items">
       <div class="item-head item-1">
@@ -109,13 +106,15 @@ function handleDailyClick() {
     </div>
       </div>`);
     });
+  weekly.style.color = "hsl(236, 100%, 87%)";
+  monthly.style.color = "hsl(236, 100%, 87%)";
 }
 
 function handleWeeklyClick() {
+  weekly.style.color = "white";
   fetch("./data.json")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data[0].timeframes);
       return (timeTrack.innerHTML = `<div>
         <div class="items">
         <div class="item-head item-1">
@@ -214,13 +213,15 @@ function handleWeeklyClick() {
       </div>
         </div>`);
     });
+  daily.style.color = "hsl(236, 100%, 87%)";
+  monthly.style.color = "hsl(236, 100%, 87%)";
 }
 
 function handleMonthlyClick() {
+  monthly.style.color = "white";
   fetch("./data.json")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data[0].timeframes);
       return (timeTrack.innerHTML = `<div>
         <div class="items">
         <div class="item-head item-1">
@@ -319,4 +320,6 @@ function handleMonthlyClick() {
       </div>
         </div>`);
     });
+  weekly.style.color = "hsl(236, 100%, 87%)";
+  daily.style.color = "hsl(236, 100%, 87%)";
 }

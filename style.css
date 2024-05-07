@@ -15,24 +15,26 @@ body {
   justify-content: center;
   font-family: "Rubik", sans-serif;
   padding: 40px;
+  gap: 30px;
 }
 
 .hero {
-  margin-bottom: 30px;
+  display: grid;
+  height: 200px;
+  grid-template-columns: 300px;
+  grid-template-rows: 120px 80px;
 }
 
 .head {
   position: relative;
-  top: 15px;
+  top: 20px;
   display: grid;
-  grid-template-columns: 45px 150px;
-  align-items: center;
+  grid-template-columns: 50px 150px;
   justify-content: center;
+  align-content: center;
   background-color: #5746ea;
-  color: white;
-  height: 100px;
+  height: 120px;
   width: 300px;
-  padding: 20px;
   border-radius: 15px;
 }
 
@@ -45,24 +47,25 @@ body {
 .report {
   font-weight: 300;
   font-size: 10px;
+  color: hsl(236, 100%, 87%);
 }
 
 .jeremy {
   font-size: 18px;
   font-weight: 300;
+  color: white;
 }
 
 .hero-body {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  color: white;
-  background-color: #1e1f4b;
-  height: 70px;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
+  justify-items: center;
+  background-color: #1e1f4b;
+  height: 90px;
   border-radius: 15px;
+  width: 300px;
 }
 .hero-body > a {
   font-size: 14px;
@@ -87,7 +90,6 @@ body {
   position: relative;
   bottom: 40px;
   background-color: #1d204b;
-  color: white;
   border-radius: 15px;
   padding: 20px;
   display: grid;
@@ -95,6 +97,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 130px;
+  width: 300px;
 }
 
 .item-body:hover {
@@ -125,6 +128,7 @@ body {
 }
 
 .last-week > .dot {
+  color: hsl(236, 100%, 87%);
   cursor: pointer;
   margin: 5px;
 }
@@ -163,4 +167,72 @@ body {
 .attribution > a {
   color: rgb(214, 107, 125);
   text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    width: 100%;
+    justify-items: start;
+    align-items: center;
+  }
+
+  .head {
+    width: 200px;
+    height: 250px;
+    display: grid;
+    grid-template-columns: 180px;
+    grid-template-rows: 100px 1fr;
+    align-items: start;
+  }
+  .head img {
+    width: 90px;
+  }
+
+  .report {
+    font-size: 16px;
+  }
+
+  .jeremy {
+    font-size: 35px;
+  }
+
+  .hero-body {
+    display: grid;
+    grid-template-columns: 180px;
+    width: 200px;
+    height: 130px;
+  }
+
+  .time-tracking-content {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 25%);
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .item-head {
+    width: 180px;
+    height: 10px;
+    /* padding: 10px; */
+    display: grid;
+    justify-content: end;
+    border-radius: 15px;
+  }
+
+  .item-body {
+    /* position: relative; */
+    bottom: 40px;
+    background-color: #1d204b;
+    border-radius: 15px;
+    /* padding: 20px; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    /* justify-content: center; */
+    height: 130px;
+    width: 180px;
+  }
 }
